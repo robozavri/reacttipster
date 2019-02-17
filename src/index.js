@@ -6,7 +6,14 @@ import App from './app';
 import Home from './pages/home';
 import Registration from './pages/registration';
 import Profile from './pages/profile';
+import ProfileEdit from './pages/profileEdit';
 import Login from './pages/login';
+import Instruction from './pages/instruction';
+import About from './pages/about';
+import ContactUs from './pages/contact';
+import Chat from './pages/chat';
+import Users from './pages/users';
+import AddTips from './pages/addTips';
 
 const title = 'My Minimal React Webpack Babel Setup wow';
 // alert('wow works');
@@ -19,7 +26,14 @@ const routing = (
       <Route path="/Home" component={Home} />
       <Route path="/Registration" component={Registration} />
       <Route path="/Profile" component={Profile} />
+      <Route path="/ProfileEdit" component={ProfileEdit} />
       <Route path="/Login" component={Login} />
+      <Route path="/Instruction" component={Instruction} />
+      <Route path="/About" component={About} />
+      <Route path="/ContactUs" component={ContactUs} />
+      <Route path="/Chat" component={Chat} />
+      <Route path="/Users" component={Users} />
+      <Route path="/AddTips" component={AddTips} />
     </div>
   </Router>
 )

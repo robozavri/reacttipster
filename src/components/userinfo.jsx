@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {  Link } from 'react-router-dom'
 
  export default class UserInfo extends React.Component {
   
@@ -22,7 +23,7 @@ import ReactDOM from 'react-dom';
 					<div className="Name">nicholas ergemla</div>
 				</div>
 				<div className="col-sm-12 text-center">
-					<a href="edit_profile.html" className="ProfileButton rounded">Edit Profile</a>
+					<Link className="ProfileButton rounded" to="/ProfileEdit">Edit profile</Link>
  				</div>
 				<div className="ProfStat">
 					<div className="Item Followers">

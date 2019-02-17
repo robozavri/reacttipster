@@ -12,9 +12,8 @@ import Footer from '../components/footer';
   
       constructor(props) {
         super(props);
-   
-       // document.getElementById('app').style.cssText = "background-image:url('assets/img/top_bg.png'); background-size: 100% auto; background-repeat:no-repeat;";
-    }
+  		document.getElementById('app').style.cssText = "";
+      }
      
       render() {
         return (
