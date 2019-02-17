@@ -1,21 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from "react-redux";
+
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+
+import translate from '../translate';
+
+// import Changelanguage from '../actions/changelanguage';
+import { CHANGE_LANGUAGE } from '../actions/types';
+
 
 import Menu from '../components/menu';
 import LeftSidebar from '../components/leftSidebar';
 import RightBanner from '../components/rightBanner';
 import Footer from '../components/footer';
 
- export default class Home extends React.Component {
+// console.log(translate.topAdvices[language]);
+class Home extends React.Component {
   
       constructor(props) {
         super(props);
-       
+    
+       // console.log(props.surename)
        document.getElementById('app').style.cssText = "background-image:url('assets/img/top_bg.png'); background-size: 100% auto; background-repeat:no-repeat;";
     }
      
       render() {
+      	// console.log('store language: ',this.props.language)
         return (
 <div> 
 	<Menu/>
@@ -28,7 +39,7 @@ import Footer from '../components/footer';
 		<div className="ContentDiv">
 			<div className="Content">
 				<div className="TipsterTable">
-					<div className="Title"><span>Top advices</span></div>
+					<div className="Title"><span>{translate.topAdvices[this.props.language]}</span></div>
 					<table>
 					    <thead>
 					        <tr>
@@ -250,10 +261,47 @@ import Footer from '../components/footer';
 		
 	</div>
 </div>
-
+<button datalang={this.props.language} onClick={ this.props.changelanguage }>change language : { this.props.language }</button>
 	<Footer/>
-	
 </div>
           );
     }
  }
+  
+
+// onClick={ this.props.store.dispatch( { type: CHANGE_LANGUAGE, payload: 'ge' } ) }
+//  const mapDispatchToProps = dispatch => ({
+//   sendMessage: message => dispatch(sendMessage(message)),
+//   deleteMessage: id => dispatch(deleteMessage(id)),
+// })
+
+ const mapDispatchToProps = dispatch => {
+  return {
+    // dispatching plain actions
+    changelanguage: (lang) => {
+    	console.log(' goted lan code : ',lang.target.getAttribute('datalang'))
+    	// console.log(' goted lan code : ',langcode)
+    	let langcode = lang.target.getAttribute('datalang');
+    	if(langcode = 'en'){  
+    		dispatch({ type: CHANGE_LANGUAGE, payload:  'ge'  })
+    	}else{
+    		dispatch({ type: CHANGE_LANGUAGE, payload:  'en'  })
+    	}
+    	
+    },
+    // changelanguage: (langcode) => dispatch({ type: CHANGE_LANGUAGE, payload:  'ge'  }),
+    // ChangelanguageImrt: (laangCode) => dispatch( Changelanguage(laangCode) ),
+    reset: () => dispatch({ type: 'RESET' })
+  }
+}
+
+ const mapStateToProps = state => {
+ 	 const { user,language } = state;
+ 	 // console.log('mapStateToProps state : ',state)
+  return {
+    surename: user.surename,
+    language: language.language
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

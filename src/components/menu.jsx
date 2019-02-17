@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { connect } from "react-redux";
 
- export default class Menu extends React.Component {
+import { CHANGE_LANGUAGE } from '../actions/types';
+
+
+ class Menu extends React.Component {
   
       constructor(props) {
         super(props);
@@ -39,11 +43,12 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 					<div className="LanguageDiv">
 						<div className="dropdown">
 						    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						        eng <i className="fa fa-angle-down"></i>
+						       { this.props.language } <i className="fa fa-angle-down"></i>
 						    </button>
 						    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						        <a className="dropdown-item" href="#">geo</a>
-						        <a className="dropdown-item" href="#">rus</a> 
+						        <a className="dropdown-item" href="#" datalang={this.props.language == 'en' ? 'ge' : 'en' } onClick={ this.props.changelanguage }>
+						        	{ this.props.language == 'en' ? 'ge' : 'en' }
+						        </a>
 						    </div>
 						</div>
 					</div>
@@ -57,3 +62,30 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
           );
     }
 }
+
+ const mapDispatchToProps = dispatch => {
+  return {
+    // dispatching plain actions
+    changelanguage: (lang) => {
+    	console.log(' goted lan code : ',lang.target.getAttribute('datalang'))
+    	// console.log(' goted lan code : ',lang.target.value)
+    	let langcode = lang.target.getAttribute('datalang');
+    	if(langcode = 'en'){  
+    		dispatch({ type: CHANGE_LANGUAGE, payload:  'ge'  })
+    	}else{
+    		dispatch({ type: CHANGE_LANGUAGE, payload:  'en'  })
+    	}
+    	
+    },
+  }
+}
+
+ const mapStateToProps = state => {
+ 	 const { language } = state;
+ 	 // console.log('mapStateToProps state : ',state)
+  return {
+    language: language.language
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Menu);
