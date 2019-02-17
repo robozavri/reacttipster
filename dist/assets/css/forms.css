@@ -1,0 +1,914 @@
+* {
+	outline:none !important;
+}
+
+input[type="text"],
+input[type="password"] {
+	height:50px;
+	width:100%;
+	display:inline-block;
+	border-radius:5px;
+	border:solid #e1e1e1 1px;
+	padding-left:22px;
+	color:#8c8c8c;
+	font-size:13px;
+	font-family:HelveticaNeueCondensedBold;	
+}
+textarea {
+	height:105px;
+	width:100%;
+	display:inline-block;
+	border-radius:5px;
+	border:solid #e1e1e1 1px;
+	padding-left:22px;
+	color:#8c8c8c;
+	font-size:13px;
+	font-family:HelveticaNeueCondensedBold;	
+	resize:none;
+	padding-top:18px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #8c8c8c;
+	opacity:0.7
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: #8c8c8c;
+	opacity:0.7
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: #8c8c8c;
+	opacity:0.7
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: #8c8c8c;
+	opacity:0.7
+}
+input[type="text"].Warning {
+	border:solid #ea1414 1px;
+}
+input[type="text"].Success {
+	border:solid #3fb34f 1px;
+}
+
+.FileUploadDiv {
+	display:inline-block;
+	width:100%;
+	height:80px;
+	position:relative;
+	float:left;
+	border:solid #dfdfdf 1px;
+	cursor:pointer;
+	border-radius:3px;
+	display:flex;
+	align-items:center;
+	transition:0.5s;
+}
+.FileUploadDiv input[type="file"] {
+	width:100%;
+	height:100%;
+	position:absolute;
+	opacity:0;
+	cursor:pointer;
+}
+.FileUploadDiv label {
+	width:100%;
+	text-align:center;
+	color:#0d1120;
+	opacity:0.7;	
+	font-family:HelveticaNeueCondensedBold;	
+	text-transform:uppercase;
+	font-size:11px;
+	transition:0.5s;
+}
+.FileUploadDiv .YourNameRound {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 100%;
+    background: #3768fd;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #fff;
+    display: inline-block;
+    position:absolute;
+    left:20px;
+	transition:0.5s;
+}
+.FileUploadDiv:hover {
+	background:#3768fd
+}
+.FileUploadDiv:hover label {
+	color:#fff;
+}
+.FileUploadDiv:hover .YourNameRound {
+	background:#fff;
+	color:#000;
+}
+
+
+
+.FormTitle {
+	color:#000;
+	font-family:HelveticaNeueCondensedBold;	
+	font-size:16px;
+	display:inline-block;
+	width:100%;
+	text-transform: uppercase;
+	margin-top:15px;
+}
+
+.Button {
+	height:35px;
+	padding:0 40px;
+	line-height:35px;
+	display:inline-block;
+	color:#fff;
+	font-size:12px;
+	border:none;
+	border-radius:3px;
+	background:#3768fd;
+	text-transform:uppercase;
+	letter-spacing:0.5px;
+	font-family:HelveticaNeueCondensedBold;
+	transition:0.5s;
+}
+.Button:hover {
+	background:#171c2e;
+}
+.Padding15 {
+	padding-left:15px;
+	padding-right:15px;
+	font-size:11px;
+	height:32px;
+	line-height:32px;
+}
+
+
+
+.ButtonWhite {
+	height:35px;
+	padding:0 30px;
+	line-height:35px;
+	display:inline-block;
+	color:#4f4f4f;
+	font-size:12px;
+	border:none;
+	border-radius:3px;
+	background:#fff;
+	text-transform:uppercase;
+	letter-spacing:0.5px;
+	font-family:HelveticaNeueCondensedBold;
+	transition:0.5s;
+}
+.ButtonWhite:hover {
+	background:#171c2e;
+	color:#fff;
+}
+
+
+.ButtonWhiteBlack {
+	height:35px;
+	padding:0 30px;
+	line-height:35px;
+	display:inline-block;
+	color:#0c1121;
+	font-size:12px;
+	border:none;
+	border-radius:3px;
+	background:#fff;
+	text-transform:uppercase;
+	letter-spacing:0.5px;
+	font-family:HelveticaNeueCondensedBold;
+	transition:0.5s;
+}
+.ButtonWhiteBlack:hover {
+	background:#171c2e;
+	color:#fff;
+}
+
+.Button_2 {
+	height: 32px;
+	padding: 0 36px;
+	line-height: 32px;
+	display: inline-block;
+	color: #fff;
+	font-size: 11px;
+	border: none;
+	border-radius: 3px;
+	background: #3768fd;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-family: HelveticaNeueCondensedBold;
+	transition: 0.5s;
+}
+.Button_2:hover,
+.Button_2:focus { 
+	background:#fff;
+	color:#3768fd;
+	text-decoration:none;
+}
+
+.ButtonGray {
+	height: 32px;
+	padding: 0 36px;
+	line-height: 32px;
+	display: inline-block;
+	color: #fff;
+	font-size: 11px;
+	border: none;
+	border-radius: 3px;
+	background: #2c2f37;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-family: HelveticaNeueCondensedBold;
+	transition: 0.5s;
+}
+.ButtonGray:hover,
+.ButtonGray:focus {
+	background:#fff;
+	color:#2c2f37;
+	text-decoration:none;
+}
+
+.MarginRight10 {margin-right:10px;}
+.RoundedButton {
+	height:32px;
+	padding:0 25px;
+	line-height:32px;
+	display:inline-block;
+	color:#fff;
+	font-size:11px;
+	border:none;
+	border-radius:30px;
+	background:#3768fd;
+	text-transform:uppercase;
+	letter-spacing:0.5px;
+	font-family:HelveticaNeueCondensedBold;
+	transition:0.5s; 
+}
+.RoundedButton:hover {
+	background:#fff;
+	color:#3768fd;
+}
+
+.ProfileButton {
+	height:30px;
+	padding:0 17px;
+	line-height:30px;
+	display:inline-block;
+	color:#fff;
+	font-size:10.5px;
+	border:none;
+	border-radius:3px;
+	background:#3768fd;
+	text-transform:uppercase;
+	letter-spacing:0.5px;
+	font-family:HelveticaNeueCondensedBold;
+	transition:0.5s; 
+}
+.ProfileButton:hover {
+	background:#fff;
+	color:#3768fd;
+}
+.ProfileButton.rounded {
+	border-radius:30px;
+}
+
+.disabled,
+.disabled:hover,
+.disabled:focus {
+	background:#fff;
+	color:#999999;
+	border:solid #e3e3e3 1px;
+	cursor:default
+}
+
+/* FOOTBALL */
+.FOOTBALL {
+	font-style:normal;
+	text-transform:uppercase;
+	font-family:HelveticaNeueCondensedBold;
+	color:#757575;	
+	text-decoration:none;
+	font-size:14px;
+	display:inline-block;
+}
+.FOOTBALL span {
+	background:url('../icons/football.png') no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+}
+.FOOTBALL:hover,
+.active .FOOTBALL {
+	color:#21c672;
+	text-decoration:none;
+}
+.FOOTBALL:hover span,
+.active .FOOTBALL span {
+	background-position:-20px;
+}
+
+
+/* TENNIS */
+.TENNIS {
+	font-style:normal;
+	text-transform:uppercase;
+	font-family:HelveticaNeueCondensedBold;
+	color:#757575;	
+	text-decoration:none;
+	font-size:14px;
+	display:inline-block;
+}
+.TENNIS span {
+	background:url('../icons/tennis.png') no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+}
+.TENNIS:hover,
+.active .TENNIS {
+	color:#e7ce23;
+	text-decoration:none;
+}
+.TENNIS:hover span,
+.active .TENNIS span {
+	background-position:-20px;
+}
+
+
+/* BASKETBALL */
+.BASKETBALL {
+	font-style:normal;
+	text-transform:uppercase;
+	font-family:HelveticaNeueCondensedBold;
+	color:#757575;	
+	text-decoration:none;
+	font-size:14px;
+	display:inline-block;
+}
+.BASKETBALL span {
+	background:url('../icons/basketball.png') no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+}
+.BASKETBALL:hover,
+.active .BASKETBALL {
+	color:#e69209;
+	text-decoration:none;
+}
+.BASKETBALL:hover span,
+.active .BASKETBALL span {
+	background-position:-20px;
+}
+
+
+/* HOCKEY */
+.HOCKEY {
+	font-style:normal;
+	text-transform:uppercase;
+	font-family:HelveticaNeueCondensedBold;
+	color:#757575;	
+	text-decoration:none;
+	font-size:14px;
+	display:inline-block;
+}
+.HOCKEY span {
+	background:url('../icons/hockey.png') no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+}
+.HOCKEY:hover,
+.active .HOCKEY {
+	color:#1ba2f7;
+	text-decoration:none;
+}
+.HOCKEY:hover span,
+.active .HOCKEY span {
+	background-position:-20px;
+}
+
+
+/* BASEBALL */
+.BASEBALL {
+	font-style:normal;
+	text-transform:uppercase;
+	font-family:HelveticaNeueCondensedBold;
+	color:#757575;	
+	text-decoration:none;
+	font-size:14px;
+	display:inline-block;
+}
+.BASEBALL span {
+	background:url('../icons/baseball.png') no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+}
+.BASEBALL:hover,
+.active .BASEBALL {
+	color:#b97b2a;
+	text-decoration:none;
+}
+.BASEBALL:hover span,
+.active .BASEBALL span {
+	background-position:-20px;
+}
+
+
+
+/* RUGBY */
+.RUGBY {
+	font-style:normal;
+	text-transform:uppercase;
+	font-family:HelveticaNeueCondensedBold;
+	color:#757575;	
+	text-decoration:none;
+	font-size:14px;
+	display:inline-block;
+}
+.RUGBY span {
+	background:url('../icons/rugby.png') no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+}
+.RUGBY:hover,
+.active .RUGBY {
+	color:#8c2947;
+	text-decoration:none;
+}
+.RUGBY:hover span,
+.active .RUGBY span {
+	background-position:-20px;
+}
+
+
+
+
+
+
+
+
+/* Small Select */
+
+.SmallSelect {
+	display:inline-block;
+	float:right;
+	margin-left:15px;
+}
+.SmallSelect .dropdown-toggle {
+	border:solid #dcdcdc 1px;
+	background:#ffffff;
+	color:#999999;
+	font-size:12px;
+	letter-spacing: 0.5px;
+	font-family:HelveticaNeueCondensedBold;
+	height:32px;
+	line-height:29px;
+	text-transform:uppercase;
+	padding-top:0;
+	transition:0.5s;
+	padding-left:22px;
+	padding-right:22px;
+}
+.SmallSelect .dropdown-toggle .fa {
+	margin-left:6px;
+}
+.SmallSelect .dropdown-toggle:hover {
+	background:#fff;
+	color:#000;
+}
+.SmallSelect .dropdown-menu {     
+    width: 100%;
+    min-width: 100%;
+    border-radius:0px;
+    padding:0;
+    background:none;
+    margin:0;
+    border:0;
+}
+.SmallSelect .dropdown-menu a {
+    border-radius:0px;
+	border:solid #dcdcdc 1px;
+	background:#ffffff;
+	color:#999999;
+	font-size:11px;
+	letter-spacing: 0.5px;
+	font-family:HelveticaNeueCondensedBold;
+	height:32px;
+	line-height:31px;
+	text-transform:uppercase;
+	padding-top:0;
+	transition:0.5s;
+	display: inline-block;
+	width: 100%;
+	padding-left:12px;
+}
+.SmallSelect .dropdown-menu a:hover {
+	background:#fff;
+	color:#000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.radio, .checkbox {
+	margin-bottom:0
+}
+
+.checkbox {
+    padding-left: 20px
+}
+
+.checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px
+}
+
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border .15s ease-in-out, color .15s ease-in-out;
+    -o-transition: border .15s ease-in-out, color .15s ease-in-out;
+    transition: border .15s ease-in-out, color .15s ease-in-out
+}
+
+.checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 0;
+    top: 0;
+    margin-left: -21px;
+    padding-left: 3px;
+    padding-top: 0.5px;
+    font-size: 11px;
+    color: #555;
+}
+
+.checkbox input[type=checkbox] {
+    opacity: 0
+}
+
+.checkbox input[type=checkbox]:focus+label::before {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px
+}
+
+.checkbox input[type=checkbox]:checked+label::after {
+    font-family: fontawesome;
+    content: "\f00c"
+}
+
+.checkbox input[type=checkbox]:disabled+label {
+    opacity: .65
+}
+
+.checkbox input[type=checkbox]:disabled+label::before {
+    background-color: #eee;
+    cursor: not-allowed
+}
+
+.checkbox.checkbox-circle label::before {
+    border-radius: 50%
+}
+
+.checkbox.checkbox-inline {
+    margin-top: 0
+}
+
+.checkbox-primary input[type=checkbox]:checked+label::before {
+    background-color: #428bca;
+    border-color: #428bca
+}
+
+.checkbox-primary input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-danger input[type=checkbox]:checked+label::before {
+    background-color: #d9534f;
+    border-color: #d9534f
+}
+
+.checkbox-danger input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-info input[type=checkbox]:checked+label::before {
+    background-color: #5bc0de;
+    border-color: #5bc0de
+}
+
+.checkbox-info input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-warning input[type=checkbox]:checked+label::before {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e
+}
+
+.checkbox-warning input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-success input[type=checkbox]:checked+label::before {
+    background-color: #5cb85c;
+    border-color: #5cb85c
+}
+
+.checkbox-success input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.radio {
+    padding-left:20px
+}
+
+.radio label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px
+}
+
+.radio label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: border .15s ease-in-out;
+    -o-transition: border .15s ease-in-out;
+    transition: border .15s ease-in-out
+}
+
+.radio label::after {
+    display: inline-block;
+    position: absolute;
+    content: " ";
+    width: 11px;
+    height: 11px;
+    left: 3px;
+    top: 3px;
+    margin-left: -20px;
+    border-radius: 50%;
+    background-color: #555;
+    -webkit-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    transform: scale(0, 0);
+    -webkit-transition: -webkit-transform .1s cubic-bezier(.8, -.33, .2, 1.33);
+    -moz-transition: -moz-transform .1s cubic-bezier(.8, -.33, .2, 1.33);
+    -o-transition: -o-transform .1s cubic-bezier(.8, -.33, .2, 1.33);
+    transition: transform .1s cubic-bezier(.8, -.33, .2, 1.33)
+}
+
+.radio input[type=radio] {
+    opacity: 0
+}
+
+.radio input[type=radio]:focus+label::before {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px
+}
+
+.radio input[type=radio]:checked+label::after {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1)
+}
+
+.radio input[type=radio]:disabled+label {
+    opacity: .65
+}
+
+.radio input[type=radio]:disabled+label::before {
+    cursor: not-allowed
+}
+
+.radio.radio-inline {
+    margin-top: 0
+}
+
+.radio-primary input[type=radio]+label::after {
+    background-color: #428bca
+}
+
+.radio-primary input[type=radio]:checked+label::before {
+    border-color: #428bca
+}
+
+.radio-primary input[type=radio]:checked+label::after {
+    background-color: #428bca
+}
+
+.radio-danger input[type=radio]+label::after {
+    background-color: #d9534f
+}
+
+.radio-danger input[type=radio]:checked+label::before {
+    border-color: #d9534f
+}
+
+.radio-danger input[type=radio]:checked+label::after {
+    background-color: #d9534f
+}
+
+.radio-info input[type=radio]+label::after {
+    background-color: #5bc0de
+}
+
+.radio-info input[type=radio]:checked+label::before {
+    border-color: #5bc0de
+}
+
+.radio-info input[type=radio]:checked+label::after {
+    background-color: #5bc0de
+}
+
+.radio-warning input[type=radio]+label::after {
+    background-color: #f0ad4e
+}
+
+.radio-warning input[type=radio]:checked+label::before {
+    border-color: #f0ad4e
+}
+
+.radio-warning input[type=radio]:checked+label::after {
+    background-color: #f0ad4e
+}
+
+.radio-success input[type=radio]+label::after {
+    background-color: #5cb85c
+}
+
+.radio-success input[type=radio]:checked+label::before {
+    border-color: #5cb85c
+}
+
+.radio-success input[type=radio]:checked+label::after {
+    background-color: #5cb85c
+}
+
+
+
+
+
+
+
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100%;
+}
+.bootstrap-select > .dropdown-toggle,
+.bootstrap-select > .dropdown-toggle:focus {
+	height:50px;
+	line-height:34px;
+	outline:none !important;
+	background:none !important;	
+	border-radius:5px;
+	border:solid #e1e1e1 1px !important;
+	padding-left:22px;
+	color:#8c8c8c;
+	font-size:13px;
+	font-family:HelveticaNeueCondensedBold;	
+}
+.bootstrap-select .dropdown-menu {
+	padding:0;
+	border-radius:0;
+	box-shadow:none;
+	margin-top:-1px;
+	border:solid #e1e1e1 1px !important;	
+}
+.bootstrap-select .dropdown-menu .dropdown-menu {
+	border:0 !important;
+}
+.bootstrap-select .dropdown-menu a {
+	height:50px;
+	line-height:50px;
+	height:auto;
+	color:#8c8c8c;
+	font-size:13px;
+	font-family:HelveticaNeueCondensedBold;	
+	border-bottom:solid #e1e1e1 1px;
+	background:none !important
+}
+.bootstrap-select .dropdown-menu a:hover {
+	background:none;
+	font-weight:normal;
+	color:#3768fd;
+}
+
+
+
+.InformationDiv {
+	height:75px;
+	text-align:center;
+	width:100%;
+	line-height:75px;
+	background:#ebf0ff;
+	font-family:HelveticaNeueCondensedBold;	
+	color:#070a14;
+	text-transform:uppercase;
+	margin-bottom:30px;
+	font-size:13px;
+}
+.InformationDiv a {
+	color:#3768fd;
+}
+/* ALERTS */
+
+.alert {
+	height:80px;
+	line-height:80px;
+	width:100%;
+	font-family:HelveticaNeueCondensedBold;	
+	padding-left:45px;
+	padding-right:45px;
+	border:none;
+	padding-top:0;
+	position:relative;
+}
+.alert span {
+	color:#fff;
+	text-transform:uppercase;
+	font-size:14px;
+}
+.alert .RemoveAlert {
+	position:absolute;
+	right:30px;
+	top:calc(50% - 20px);
+	color:#fff;
+	width:40px;
+	height:40px; 
+	text-align:center;
+	line-height:40px;
+	cursor:pointer;
+}
+.alert .ButtonWhite {
+	float: right;
+    margin-top: 22.5px;
+    margin-right: 60px;
+}
+
+.alert.alert-info {background:#3768fd;}
+.alert.alert-info .ButtonWhite {color:#3768fd;}
+.alert.alert-info .ButtonWhite:hover {color:#fff;}
+
+.alert.alert-warning {background:#e49126;}
+.alert.alert-warning .ButtonWhite {color:#e49126;}
+.alert.alert-warning .ButtonWhite:hover {color:#fff;}
+
+.alert.alert-danger {background:#8c2947;}
+.alert.alert-danger .ButtonWhite {color:#8c2947;}
+.alert.alert-danger .ButtonWhite:hover {color:#fff;}
+
+.alert.alert-success {background:#21c672;}
+.alert.alert-success .ButtonWhite {color:#21c672;}
+.alert.alert-success .ButtonWhite:hover {color:#fff;}
