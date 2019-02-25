@@ -45,9 +45,32 @@ import { CHANGE_LANGUAGE } from '../actions/types';
 						    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						       { this.props.language } <i className="fa fa-angle-down"></i>
 						    </button>
-						    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						        <a className="dropdown-item" href="#" datalang={this.props.language == 'en' ? 'ge' : 'en' } onClick={ this.props.changelanguage }>
-						        	{ this.props.language == 'en' ? 'ge' : 'en' }
+						    <div  className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						        <a datalang={
+                                    (function(lang) {
+                                        switch(lang){
+                                               case 'en' : return 'ge';
+                                                 break;
+                                               case 'ge' :  return 'en';
+                                                 break;
+                                            default:
+                                                return 'ge';
+                                        }
+                                        console.log(lang);
+                                    })(this.props.language)}
+                                onClick={ this.props.changelanguage } className="dropdown-item" href="#" >
+						        	
+						        	 {(function(lang) {
+                                        switch(lang){
+                                               case 'en' : return 'ge';
+                                                 break;
+                                               case 'ge' :  return 'en';
+                                                 break;
+                                            default:
+                                                return 'ge';
+                                        }
+                                        console.log(lang);
+                                    })(this.props.language)}
 						        </a>
 						    </div>
 						</div>
@@ -67,25 +90,19 @@ import { CHANGE_LANGUAGE } from '../actions/types';
   return {
     // dispatching plain actions
     changelanguage: (lang) => {
-    	console.log(' goted lan code : ',lang.target.getAttribute('datalang'))
-    	// console.log(' goted lan code : ',lang.target.value)
     	let langcode = lang.target.getAttribute('datalang');
-    	if(langcode = 'en'){  
-    		dispatch({ type: CHANGE_LANGUAGE, payload:  'ge'  })
-    	}else{
-    		dispatch({ type: CHANGE_LANGUAGE, payload:  'en'  })
-    	}
-    	
+        dispatch({ type: CHANGE_LANGUAGE, payload:  langcode  });    	
     },
   }
 }
 
  const mapStateToProps = state => {
- 	 const { language } = state;
- 	 // console.log('mapStateToProps state : ',state)
-  return {
-    language: language.language
-  }
+ 	  const {  user,language, translate  } = state;
+      return {
+        surename  : user.surename,
+        language  : language.language,
+        translate : language.translate,
+      }
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Menu);

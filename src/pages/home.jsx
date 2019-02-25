@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
-import translate from '../translate';
-
 // import Changelanguage from '../actions/changelanguage';
 import { CHANGE_LANGUAGE } from '../actions/types';
 
@@ -26,7 +24,7 @@ class Home extends React.Component {
     }
      
       render() {
-      	// console.log('store language: ',this.props.language)
+    //      	 console.log('store language: ',this.props.language)
         return (
 <div> 
 	<Menu/>
@@ -39,7 +37,7 @@ class Home extends React.Component {
 		<div className="ContentDiv">
 			<div className="Content">
 				<div className="TipsterTable">
-					<div className="Title"><span>{translate.topAdvices[this.props.language]}</span></div>
+					<div className="Title"><span>{ this.props.translate.topAdvices[this.props.language]}</span></div>
 					<table>
 					    <thead>
 					        <tr>
@@ -261,7 +259,7 @@ class Home extends React.Component {
 		
 	</div>
 </div>
-<button datalang={this.props.language} onClick={ this.props.changelanguage }>change language : { this.props.language }</button>
+
 	<Footer/>
 </div>
           );
@@ -269,38 +267,21 @@ class Home extends React.Component {
  }
   
 
-// onClick={ this.props.store.dispatch( { type: CHANGE_LANGUAGE, payload: 'ge' } ) }
-//  const mapDispatchToProps = dispatch => ({
-//   sendMessage: message => dispatch(sendMessage(message)),
-//   deleteMessage: id => dispatch(deleteMessage(id)),
-// })
 
- const mapDispatchToProps = dispatch => {
+  const mapDispatchToProps = dispatch => {
   return {
-    // dispatching plain actions
-    changelanguage: (lang) => {
-    	console.log(' goted lan code : ',lang.target.getAttribute('datalang'))
-    	// console.log(' goted lan code : ',langcode)
-    	let langcode = lang.target.getAttribute('datalang');
-    	if(langcode = 'en'){  
-    		dispatch({ type: CHANGE_LANGUAGE, payload:  'ge'  })
-    	}else{
-    		dispatch({ type: CHANGE_LANGUAGE, payload:  'en'  })
-    	}
-    	
-    },
-    // changelanguage: (langcode) => dispatch({ type: CHANGE_LANGUAGE, payload:  'ge'  }),
-    // ChangelanguageImrt: (laangCode) => dispatch( Changelanguage(laangCode) ),
+ 
     reset: () => dispatch({ type: 'RESET' })
   }
 }
 
  const mapStateToProps = state => {
- 	 const { user,language } = state;
+ 	 const { user,language, translate } = state;
  	 // console.log('mapStateToProps state : ',state)
   return {
-    surename: user.surename,
-    language: language.language
+    surename  : user.surename,
+    language  : language.language,
+    translate : language.translate,
   }
 }
 
